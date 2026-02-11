@@ -11,6 +11,12 @@
 #include <dt-bindings/zmk/keys.h>
 
 &led_strip { chain-length = <27>; };
+
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <250>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -59,7 +65,7 @@
 &kp TAB    &mt EXCLAMATION Q  &mt AT_SIGN W  &mt HASH E  &mt DOLLAR R  &mt PERCENT T    &mt CARET Y  &mt AMPERSAND U  &mt ASTERISK I  &kp O    &kp P     &kp BSPC
 &kp LCTRL  &kp A              &kp S          &kp D       &kp F         &kp G            &kp H        &kp J            &kp K           &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z              &kp X          &kp C       &kp V         &kp B            &kp N        &kp M            &kp COMMA       &kp DOT  &kp FSLH  &lt 3 ESC
-                                             &kp LALT    &kp LGUI      &lt 1 SPACE      &kp ENTER    &mo 2            &trans
+                                             &kp LALT    &kp LGUI      &lt 1 SPACE      &kp ENTER    &mo 2            &mo 3
             >;
         };
 
@@ -83,10 +89,10 @@
 
         func {
             bindings = <
-&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans    &kp F12  &kp F7  &kp F8  &kp F9  &kp PRINTSCREEN  &kp DEL
-&kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE    &trans        &trans        &trans    &kp F11  &kp F4  &kp F5  &kp F6  &trans           &trans
-&trans        &trans        &trans        &trans        &trans        &trans    &kp F10  &kp F1  &kp F2  &kp F3  &trans           &trans
-                                          &trans        &trans        &trans    &trans   &trans  &trans
+&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans    &trans          &trans         &trans        &trans     &kp PRINTSCREEN  &kp DEL
+&kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE    &trans        &trans        &trans    &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans           &trans
+&trans        &trans        &trans        &trans        &trans        &trans    &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &trans           &trans
+                                          &trans        &trans        &trans    &trans          &trans         &trans
             >;
         };
     };
