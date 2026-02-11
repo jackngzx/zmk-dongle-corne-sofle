@@ -11,77 +11,82 @@
 #include <dt-bindings/zmk/keys.h>
 
 &led_strip { chain-length = <27>; };
-
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        combo1 {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <4 5>;
+        };
+
+        combo2 {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <16 17>;
+        };
+
+        combo3 {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <28 29>;
+        };
+
+        c4 {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <6 7>;
+        };
+
+        c5 {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <18 19>;
+        };
+
+        c6 {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <30 31>;
+        };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <19 20>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "BAS";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
+        base {
             bindings = <
-&kp TAB     &kp Q  &kp W  &kp E      &kp R      &kp T          &kp Y        &kp U      &kp I      &kp O    &kp P     &kp BSPC
-&lt 3 CAPS  &kp A  &kp S  &kp D      &kp F      &kp G          &kp H        &kp J      &kp K      &kp L    &kp SEMI  &kp KP_ENTER
-&kp LSHFT   &kp Z  &kp X  &kp C      &kp V      &kp B          &kp N        &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                          &kp LCTRL  &kp SPACE  &lt 1 SPACE    &lt 2 SPACE  &kp SPACE  &kp RGUI
+&kp TAB    &mt EXCLAMATION Q  &mt AT_SIGN W  &mt HASH E  &mt DOLLAR R  &mt PERCENT T    &mt CARET Y  &mt AMPERSAND U  &mt ASTERISK I  &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A              &kp S          &kp D       &kp F         &kp G            &kp H        &kp J            &kp K           &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z              &kp X          &kp C       &kp V         &kp B            &kp N        &kp M            &kp COMMA       &kp DOT  &kp FSLH  &lt 3 ESC
+                                             &kp LALT    &kp LGUI      &lt 1 SPACE      &kp ENTER    &mo 2            &trans
             >;
         };
 
-        lower_layer {
-            display-name = "LOW";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        num {
             bindings = <
-&kp ESCAPE  &kp NUMBER_1       &kp NUMBER_2    &kp NUMBER_3     &kp NUMBER_4      &kp NUMBER_5     &kp N6    &kp N7         &kp N8    &kp N9     &kp N0  &kp DELETE
-&bt BT_CLR  &kp K_VOLUME_DOWN  &kp UP_ARROW    &kp K_VOLUME_UP  &kp K_PLAY_PAUSE  &kp K_MUTE       &kp HOME  &kp PG_UP      &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT        &kp LC(V)         &kp LG(LS(S))    &kp END   &kp PAGE_DOWN  &trans    &trans     &trans  &trans
-                                               &kp LGUI         &trans            &kp SPACE        &kp RET   &trans         &kp RALT
+&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &trans     &kp N7  &kp N8  &kp N9  &kp LS(COLON)  &kp BACKSPACE
+&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &trans     &kp N4  &kp N5  &kp N6  &kp LS(PLUS)   &kp MINUS
+&trans  &trans  &trans  &trans   &trans   &trans     &kp N0     &kp N1  &kp N2  &kp N3  &kp LS(STAR)   &kp FSLH
+                        &trans   &trans   &trans     &kp ENTER  &trans  &trans
             >;
         };
 
-        raise_layer {
-            display-name = "RAI";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        sym {
             bindings = <
-&kp TILDE2  &kp EXCL  &kp AT  &kp HASH  &kp DLLR        &kp PRCNT     &kp CARET  &kp AMPS        &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL   &trans    &trans  &trans    &trans          &kp TILDE2    &kp MINUS  &kp EQUAL       &kp LBKT         &kp RBKT  &kp BSLH  &kp DOUBLE_QUOTES
-&kp LSHFT   &trans    &trans  &trans    &trans          &kp GRAVE     &kp UNDER  &kp PLUS        &kp LBRC         &kp RBRC  &kp PIPE  &kp SINGLE_QUOTE
-                              &kp LGUI  &studio_unlock  &kp SPACE     &kp RET    &studio_unlock  &kp RALT
+&kp TILDE       &kp LEFT_PARENTHESIS  &kp COLON     &kp EQUAL  &kp RIGHT_PARENTHESIS  &kp AMPERSAND    &kp EXCLAMATION  &kp AT_SIGN    &kp HASH      &kp DOLLAR  &kp PERCENT  &kp BACKSPACE
+&kp GRAVE       &kp LEFT_BRACE        &kp MINUS     &kp PLUS   &kp RIGHT_BRACE        &kp PIPE         &kp CARET        &kp AMPERSAND  &kp ASTERISK  &trans      &trans       &trans
+&kp LEFT_SHIFT  &kp LEFT_BRACKET      &kp ASTERISK  &kp SLASH  &kp RIGHT_BRACKET      &kp PERCENT      &trans           &trans         &trans        &trans      &trans       &trans
+                                                    &trans     &trans                 &trans           &trans           &trans         &trans
             >;
         };
 
-        layer_3 {
+        func {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        layer_4 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans    &kp F12  &kp F7  &kp F8  &kp F9  &kp PRINTSCREEN  &kp DEL
+&kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE    &trans        &trans        &trans    &kp F11  &kp F4  &kp F5  &kp F6  &trans           &trans
+&trans        &trans        &trans        &trans        &trans        &trans    &kp F10  &kp F1  &kp F2  &kp F3  &trans           &trans
+                                          &trans        &trans        &trans    &trans   &trans  &trans
             >;
         };
     };
