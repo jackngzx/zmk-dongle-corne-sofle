@@ -17,36 +17,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo1 {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 5>;
-        };
-
-        combo2 {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <16 17>;
-        };
-
-        combo3 {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <28 29>;
-        };
-
-        c4 {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <6 7>;
-        };
-
-        c5 {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <18 19>;
-        };
-
-        c6 {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <30 31>;
-        };
-
         esc {
             bindings = <&kp ESC>;
             key-positions = <19 20>;
@@ -67,10 +37,10 @@
 
         num {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &trans     &kp N7  &kp N8  &kp N9  &kp LS(COLON)  &kp BACKSPACE
-&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &trans     &kp N4  &kp N5  &kp N6  &kp LS(PLUS)   &kp MINUS
-&trans  &trans  &trans  &trans   &trans   &trans     &kp N0     &kp N1  &kp N2  &kp N3  &kp LS(STAR)   &kp FSLH
-                        &trans   &trans   &trans     &kp ENTER  &trans  &trans
+&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &trans  &kp N7  &kp N8  &kp N9  &kp LS(COLON)  &kp BACKSPACE
+&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &trans  &kp N4  &kp N5  &kp N6  &kp LS(PLUS)   &kp MINUS
+&trans  &trans  &trans  &trans   &trans   &trans     &kp N0  &kp N1  &kp N2  &kp N3  &kp LS(STAR)   &kp FSLH
+                        &trans   &trans   &trans     &kp N0  &trans  &trans
             >;
         };
 
@@ -85,10 +55,19 @@
 
         func {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_BLE    &trans          &trans         &trans        &trans     &kp PRINTSCREEN  &kp DEL
-&trans      &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE    &trans        &out OUT_USB    &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans           &trans
-&trans      &trans        &trans           &trans        &trans        &sys_reset      &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &trans           &trans
-                                           &trans        &trans        &trans          &trans          &trans         &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_BLE    &trans    &trans          &kp UP_ARROW    &trans     &kp PRINTSCREEN  &kp DEL
+&trans      &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE    &trans        &out OUT_USB    &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans           &trans
+&trans      &trans        &trans           &trans        &trans        &sys_reset      &kp HOME  &kp PAGE_DOWN   &kp PAGE_UP     &kp END    &trans           &trans
+                                           &trans        &trans        &trans          &trans    &trans          &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
