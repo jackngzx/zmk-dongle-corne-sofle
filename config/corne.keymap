@@ -88,7 +88,7 @@
         compatible = "zmk,keymap";
 
         base {
-            bindings = 
+            bindings = <
 &kp Q  &kp W        &kp E         &kp R                      &kp T          &kp Y      &kp U        &kp I         &kp O        &kp P
 &kp A  &hml LALT S  &hml LCTRL D  &hml LGUI F                &kp G          &kp H      &hmr RGUI J  &hmr RCTRL K  &hmr RALT L  &kp SEMI
 &kp Z  &kp X        &kp C         &kp V                      &kp B          &kp N      &kp M        &kp COMMA     &kp DOT      &kp FSLH
@@ -97,7 +97,7 @@
         };
 
         num {
-            bindings = 
+            bindings = <
 &trans  &kp F7  &kp F8  &kp F9  &kp F10    &trans  &kp N7  &kp N8  &kp N9  &kp BACKSPACE
 &trans  &kp F4  &kp F5  &kp F6  &kp F11    &trans  &kp N4  &kp N5  &kp N6  &trans
 &trans  &kp F1  &kp F2  &kp F3  &kp F12    &kp N0  &kp N1  &kp N2  &kp N3  &trans
@@ -106,7 +106,7 @@
         };
 
         sym {
-            bindings = 
+            bindings = <
 &kp LEFT_PARENTHESIS  &kp COLON     &kp EQUAL  &kp RIGHT_PARENTHESIS  &kp GRAVE        &kp EXCLAMATION  &kp AT_SIGN    &kp HASH      &kp DOLLAR  &kp PERCENT
 &kp LEFT_BRACE        &kp MINUS     &kp PLUS   &kp RIGHT_BRACE        &kp BACKSLASH    &kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp PIPE    &kp TILDE
 &kp LEFT_BRACKET      &kp ASTERISK  &kp SLASH  &kp RIGHT_BRACKET      &kp SQT          &trans           &trans         &trans        &trans      &trans
@@ -115,7 +115,7 @@
         };
 
         func {
-            bindings = 
+            bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_BLE    &trans    &trans          &kp UP_ARROW    &trans     &kp PRINTSCREEN
 &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE    &bt BT_CLR    &out OUT_USB    &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans
 &trans        &trans           &trans        &trans        &sys_reset      &kp HOME  &kp PAGE_DOWN   &kp PAGE_UP     &kp END    &trans
