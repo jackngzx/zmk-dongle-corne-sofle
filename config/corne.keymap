@@ -43,6 +43,21 @@
             hold-trigger-key-positions = <LKEYS>;
             hold-trigger-on-release;
         };
+        ss_cw: shift_caps_word {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT>, <&caps_word>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        sft_cw: shift_capsword_ht {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&ss_cw>;
+        };
     };
 
     combos {
